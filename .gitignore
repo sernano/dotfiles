@@ -22,4 +22,9 @@ package-lock.json
 .sass-cache
 
 # Mutt
-/_mutt/cache
+/_mutt/aliases
+/_mutt/bodies
+/_mutt/gpg.rc
+/_mutt/headers
+/_mutt/signatures
+/_mutt/tmp
