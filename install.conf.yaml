@@ -8,3 +8,15 @@
     ~/.config/i3:
       create: true
       path: _i3
+    ~/.config/mimeapps.list:
+      create: true
+      path: _mimeapps.list
+    ~/.config/mpd/mpd.conf:
+      create: true
+      path: _mpd.conf
+    ~/.config/networkmanager-dmenu:
+      create: true
+      path: _networkmanager-dmenu
+    ~/.config/oomox:
+      create: true
+      path: _oomox
