@@ -1,0 +1,25 @@
+# Vim
+*.sw[op]
+_vim/plugged
+_vim/bak
+_vim/swp
+_vim/spell
+_vim/.netrwhist
+.nvimrc
+.vim
+
+# Python
+*.py[ocd]
+.ropeproject
+
+# Javascript
+node_modules
+bower_components
+npm-debug.log
+package-lock.json
+
+# CSS
+.sass-cache
+
+# Mutt
+/_mutt/cache
