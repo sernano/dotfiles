@@ -61,3 +61,8 @@
     ~/.Xresources: _Xresources
     ~/.zprofile: _zprofile
     ~/.zshrc: _zshrc
+
+- clean: ['~', '~./cache/wal', '~/.config', '~/.gnupg', '~/.local/share']
+
+- shell:
+    - [fc-cache -rf ~/.local/share/fonts, Install/update fonts]
