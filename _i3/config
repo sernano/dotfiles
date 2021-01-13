@@ -1,0 +1,244 @@
+# sets mod key to alt
+set $mod Mod1
+
+# window title font
+font pango:UbuntuMono Nerd Font 10
+
+# drag windows with mouse+mod
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi
+bindsym $mod+d exec rofi -show run -display-run
+
+# start networkmanager_dmenu
+bindsym $mod+f exec /home/samantha/bin/networkmanager_dmenu
+
+# lock screen
+bindsym $mod+Shift+e exec betterlockscreen -l
+
+# change focused window
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# change focused window with cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# move focused window with cursor keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+Shift+f fullscreen toggle
+
+# change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+z focus child
+
+# set workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# assign workspaces to displays
+workspace "1" output primary
+workspace "2" output primary
+workspace "3" output primary
+workspace "4" output primary
+workspace "5" output primary
+workspace "6" output LVDS-1
+workspace "7" output LVDS-1
+workspace "8" output LVDS-1
+workspace "9" output LVDS-1
+workspace "10" output LVDS-1
+
+
+# assigned workspaces and misc. window defaults
+# assign [class="Zathura"] $ws3
+# assign [class="libreoffice-startcenter|Soffice"] $ws4
+# assign [class="mpv"] $ws5
+# assign [class="firefox"] $ws10
+assign [class="code-oss"] $ws2
+for_window [instance="fontpreview"] floating enable
+
+# default to tabs on workspace 1
+#for_window [workspace=$ws1] layout tabbed
+
+# default to tabs on all workspaces
+workspace_layout tabbed
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+o exec "i3-nagbar -t warning -m 'logout?' -b 'yes' 'i3-msg exit'"
+
+# resize window
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# set variables for window title bar colors
+set $bg-color 	      	 	 #54414c
+set $border-color      		 #0d0d11
+set $inactive-bg-color   	 #0d0d11
+set $inactive-border-color	 #0d0d11
+set $text-color       		 #f1eeca
+set $inactive-text-color	 #a8a68d
+set $urgent-bg-color   		 #0d0d11
+set $urgent-text-color  	 #e4bb6d
+set $child-border-color	  	 #e4bb6d
+set $inactive-child-border-color #171717
+set $indicator-color		 #538877
+
+# window colors
+#                       border              background         text                 indicator        child border
+client.focused          $border-color       $bg-color          $text-color          $indicator-color $child-border-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color $inactive-child-border-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color $inactive-child-border-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $urgent-text-color   $indicator-color $child-border-color
+
+# disables window decoration and sets child border width
+for_window [class="^.*"] border pixel 4
+
+# title bar vertical padding
+for_window [class=".*"] title_format "  %title"
+
+# start up
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id picom -b
+
+# gaps
+gaps inner 8
+gaps outer 3
+smart_borders on
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}

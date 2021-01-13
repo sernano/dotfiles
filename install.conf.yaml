@@ -1,0 +1,10 @@
+- link:
+    ~/.config/betterlockscreenrc:
+      create: true
+      path: _betterlockscreenrc
+    ~/.config/cava:
+      create: true
+      path: _cava
+    ~/.config/i3:
+      create: true
+      path: _i3

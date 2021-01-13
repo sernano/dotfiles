@@ -1,0 +1,12 @@
+[general]
+mode = waves
+
+bars = 0
+bar_width = 1
+bar_spacing = 1
+
+[input]
+method = pulse
+
+[color]
+foreground = green
