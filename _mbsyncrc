@@ -1,0 +1,115 @@
+IMAPAccount gmail
+Host imap.gmail.com
+User samantha.ernano@gmail.com
+PassCmd "gpg -d ~/.mail/.passwords/gmail.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+# the trailing "/" on the next line is important
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/inbox
+
+Channel gmail-inbox
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-archive
+Master :gmail-remote:"[Gmail]/All Mail"
+Slave :gmail-local:archive
+Create Both
+Expunge Both
+Syncstate *
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/Trash"
+Slave :gmail-local:trash
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-drafts
+Master :gmail-remote:"[Gmail]/Drafts"
+Slave :gmail-local:drafts
+Create Both
+Expunge Both
+SyncState *
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-archive
+Channel gmail-sent
+Channel gmail-trash
+Channel gmail-drafts
+
+IMAPAccount acorn
+Host imap.gmail.com
+User sam@acorncommunity.org
+PassCmd "gpg -d ~/.mail/.passwords/acorn.gpg"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore acorn-remote
+Account acorn 
+
+MaildirStore acorn-local
+# the trailing "/" on the next line is important
+Path ~/.mail/acorn/
+Inbox ~/.mail/acorn/inbox
+
+Channel acorn-inbox
+Master :acorn-remote:
+Slave :acorn-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+SyncState *
+
+Channel acorn-archive
+Master :acorn-remote:"[Gmail]/All Mail"
+Slave :acorn-local:archive
+Create Both
+Expunge Both
+Syncstate *
+
+Channel acorn-sent
+Master :acorn-remote:"[Gmail]/Sent Mail"
+Slave :acorn-local:sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel acorn-trash
+Master :acorn-remote:"[Gmail]/Trash"
+Slave :acorn-local:trash
+Create Both
+Expunge Both
+SyncState *
+
+Channel acorn-drafts
+Master :acorn-remote:"[Gmail]/Drafts"
+Slave :acorn-local:drafts
+Create Both
+Expunge Both
+SyncState *
+
+Group acorn 
+Channel acorn-inbox
+Channel acorn-archive
+Channel acorn-sent
+Channel acorn-trash
+Channel acorn-drafts

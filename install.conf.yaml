@@ -41,6 +41,14 @@
     ~/.config/zathura:
       create: true
       path: _zathura
+    ~/.gnupg/gpg-agent.conf:
+      create: true
+      path: _gpg-agent.conf
+    ~/.local/share/fonts:
+      create: true
+      path: _fonts
     ~/.antigen: _antigen
     ~/.bash_profile: _bash_profile
     ~/.bashrc: _bashrc
+    ~/.mbsyncrc: _mbsyncrc
+    ~/.msmtprc: _msmtprc
