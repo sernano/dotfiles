@@ -1,0 +1,126 @@
+# directories and commands
+set alias_file		= ~/.mutt/aliases
+set header_cache	= ~/.mutt/headers
+set message_cachedir	= ~/.mutt/bodies
+set tmpdir		= ~/.mutt/tmp
+set mailcap_path	= ~/.mutt/mailcap
+set editor		= /usr/bin/vim
+set folder		= ~/.mail
+
+# main options
+set mbox_type		= Maildir
+set spoolfile		= +gmail/inbox
+mailboxes		  +gmail/inbox +acorn/inbox
+set timeout		= 0
+set mail_check		= 60
+set sort_alias		= alias
+set send_charset	= "us-ascii:utf-8"
+set reverse_alias	= yes
+unset move
+set delete
+set confirmappend
+set beep_new
+set pipe_decode
+set sleep_time = 0
+set copy
+auto_view		text/html
+alternative_order	text/plain text/html
+
+# index options
+set sort		= threads
+set sort_aux		= reverse-last-date-received
+set sort_re
+set uncollapse_jump
+set index_format	= "%Z %-15.15{%b %d %Y} %-30.30L %s"
+
+# pager options
+set pager_index_lines	= 8
+set pager_context	= 5
+set pager_stop
+set menu_scroll
+set smart_wrap
+set tilde
+unset markers
+
+# composing mail
+set realname		= "Samantha E."
+set envelope_from
+set fcc_attach
+set forward_format	= "Fwd: %s"
+set reverse_name
+set include
+unset mime_forward
+set forward_quote
+set send_charset	= "utf-8"
+set fcc_attach
+
+ignore *
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+# sidebar
+set sidebar_visible
+set sidebar_format	= "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+set sidebar_width	= 23
+set sidebar_divider_char = │
+# sources
+source ~/.mutt/gmail.muttrc
+source ~/.mutt/colors.muttrc
+source ~/.mutt/gpg.rc
+source $alias_file
+
+# account specific sources
+folder-hook gmail/*  source ~/.mutt/gmail.muttrc
+folder-hook acorn/*  source ~/.mutt/acorn.muttrc
+
+# bindings
+bind index,pager g	noop
+
+bind pager i		exit
+bind pager /		search
+bind pager <up>		previous-line
+bind pager <down>	next-line
+bind pager k		previous-line
+bind pager j		next-line
+bind pager gg		top
+bind pager G		bottom
+bind index gg		first-entry
+bind index G		last-entry
+bind pager K		previous-undeleted
+bind pager J		next-undeleted
+bind index K		previous-unread
+bind index J		next-unread
+bind index,pager R	group-reply
+bind index,pager (	sidebar-toggle-visible
+
+# macros
+macro index \Cr "<tag-prefix><clear-flag>N"	"mark messages as read"
+macro index B	"<limit>~b "		    	"search message bodies"
+macro pager \cb <pipe-entry>'urlscan'<enter>	'follow links with urlscan'
+macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/mail.html && $BROWSER ~/.cache/mutt/mail.html<enter>"
+macro index <space> "<sync-mailbox>"
+
+# switch accounts
+macro index,pager \e1 ":source ~/.mutt/gmail.muttrc<enter>"
+macro index,pager \e2 ":source ~/.mutt/acorn.muttrc<enter>"
+
+macro index,pager \eq "<change-folder>+gmail/inbox<enter>"
+macro index,pager \ew "<change-folder>+acorn/inbox<enter>"
+
+# quick-sync ~/.mail
+macro index Z "<shell-escape>/usr/bin/mbsync -a<enter>" "sync all mail"
+
+# printer settings
+set print_command="/usr/bin/muttprint %s -p OKI_B731_FE8EB0"
+
+# encryption settings
+set pgp_use_gpg_agent		= yes
+set pgp_auto_decode
+set crypt_replyencrypt		= yes
+set crypt_replysign		= yes
+set crypt_replysignencrypted	= yes
+set crypt_verify_sig		= yes
+
+set mime_forward 		= yes
+set mime_forward_rest		= yes

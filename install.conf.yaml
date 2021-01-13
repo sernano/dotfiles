@@ -52,3 +52,8 @@
     ~/.bashrc: _bashrc
     ~/.mbsyncrc: _mbsyncrc
     ~/.msmtprc: _msmtprc
+    ~/.mutt: _mutt
+    ~/.ncmpcpp: _ncmpcpp
+    ~/.vim: _vim
+    ~/.vimrc: _vimrc
+    ~/.xinitrc: _xinitrc

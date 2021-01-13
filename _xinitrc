@@ -1,0 +1,21 @@
+# swap caps lock and escape
+setxkbmap -option caps:swapescape
+
+# set PATH
+export PATH="$HOME/bin:$PATH"
+
+# load .Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# start the gnome keyring daemon
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+# start pywal
+wal -R
+
+# start redshift
+redshift &
+
+# start i3
+exec i3

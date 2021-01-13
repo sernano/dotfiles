@@ -1,0 +1,26 @@
+# -*-muttrc-*-
+
+# object		# foreground		# background
+
+color hdrdefault	blue			black
+color quoted		brightmagenta		black
+color signature		brightblue		black
+color attachment	magenta			black
+color prompt		yellow			black
+color message		yellow		 	black
+color error		yellow			black
+color indicator		black			cyan
+color status		black			green
+color tree		brightyellow		black
+color normal		brightwhite		black
+color markers		brightred		black
+color search		brightwhite		black
+color tilde		brightmagenta		black
+color index		brightblue		black ~F
+color index		blue			black "~N|~O"
+color sidebar_divider	cyan			black
+color sidebar_new	yellow			black
+color sidebar_indicator	black			cyan
+
+# color body brightwhite black '\*+[^*]+\*+'
+# color body brightwhite black '_+[^_]+_+'

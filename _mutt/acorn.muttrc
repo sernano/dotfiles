@@ -1,0 +1,21 @@
+#main settings
+set sendmail = "/usr/bin/msmtp -a acorn"
+set spoolfile = "+acorn/inbox"
+set mbox = "+acorn/archive"
+set postponed = "+acorn/drafts"
+set trash = "+acorn/trash"
+unset record
+unset signature
+
+# account info
+set from = "sam@acorncommunity.org"
+set realname = "Samantha E."
+
+# gmail style keyboard shortcuts
+macro index ta "<change-folder>=acorn/archive<enter>" "Go to all mail"
+macro index td "<change-folder>=acorn/drafts<enter>" "Go to all drafts"
+macro index ti "<change-folder>=acorn/inbox<enter>" "Go to inbox"
+macro index tt "<change-folder>=acorn/trash<enter>" "Go to trash"
+macro index ts "<change-folder>=acorn/sent<enter>" "View sent mail"
+macro index,pager d "<save-message>=/acorn/trash<enter><enter>" "Trash"
+macro index,pager y "<save-message>=/acorn/archive<enter><enter>"

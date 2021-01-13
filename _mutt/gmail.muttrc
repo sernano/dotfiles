@@ -1,0 +1,21 @@
+# main settings
+set sendmail = "/usr/bin/msmtp -a gmail"
+set spoolfile = "+gmail/inbox"
+set mbox = "+gmail/archive"
+set postponed = "+gmail/drafts"
+set trash = "+gmail/trash"
+unset record
+unset signature
+
+# account info
+set from = "samantha.ernano@gmail.com"
+set realname = "Samantha E."
+
+# gmail style keyboard shortcuts
+macro index ta "<change-folder>=gmail/archive<enter>" "Go to all mail"
+macro index td "<change-folder>=gmail/drafts<enter>" "Go to all drafts"
+macro index ti "<change-folder>=gmail/inbox<enter>" "Go to inbox"
+macro index tt "<change-folder>=gmail/trash<enter>" "Go to trash"
+macro index ts "<change-folder>=gmail/sent<enter>" "View sent mail"
+macro index,pager d "<save-message>=/gmail/trash<enter><enter>" "Trash"
+macro index,pager y "<save-message>=/gmail/archive<enter><enter>" "Archive"

@@ -2,8 +2,10 @@
 *.sw[op]
 _vim/plugged
 _vim/bak
+_vim/bundle
 _vim/swp
 _vim/spell
+_vim/Wombat
 _vim/.netrwhist
 .nvimrc
 .vim

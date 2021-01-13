@@ -1,0 +1,49 @@
+# directories
+ncmpcpp_directory = ~/.ncmpcpp
+lyrics_directory = ~/.lyrics
+mpd_music_dir = /mnt/sdb/Music
+
+# connection settings
+mpd_host = localhost
+mpd_port = 6600
+
+# display settings
+user_interface = alternative 
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[green]{b} (7f)[blue]{l}
+alternative_header_first_line_format = $5$aqqu$/a$9 {%t}|{%f} $5$atqq$/a$9$/b
+alternative_header_second_line_format = {{$8$b%a$/b$9}{ - $8%b$9}{ ($8%y$9)}}|{%D}
+browser_display_mode = columns
+search_engine_display_mode = columns
+playlist_editor_display_mode = columns
+current_item_inactive_column_prefix= "*"
+
+# playlist settings
+playlist_show_mpd_host = yes
+playlist_show_remaining_time = yes
+playlist_shorten_total_times = yes
+playlist_separate_albums = yes
+
+# various settings
+header_visibility = no
+cyclic_scrolling = yes
+startup_screen = media_library
+display_bitrate = yes
+enable_window_title = yes
+external_editor = vim 
+
+# colors
+colors_enabled = yes
+empty_tag_color = blue
+header_window_color = white
+volume_color = blue
+state_line_color = green
+state_flags_color = white
+main_window_color = green
+progressbar_color = black
+progressbar_elapsed_color = white
+statusbar_color = white
+alternative_ui_separator_color = white
+window_border_color = green
+active_window_border = red
+current_item_prefix = "$(red)$r"
+current_item_suffix = "$/r$(end)"
