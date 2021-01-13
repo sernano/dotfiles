@@ -29,3 +29,13 @@
     ~/.config/redshift.conf:
       create: true
       path: _redshift.conf
+    ~/.config/termite:
+      create: true
+      path: _termite
+    ~/.config/urlscan:
+      create: true
+      path: _urlscan
+    ~/.config/zathura:
+      create: true
+      path: _zathura
+    ~/.antigen: _antigen

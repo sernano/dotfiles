@@ -1,0 +1,30 @@
+# default to fit-width mode
+set adjust-open "best-fit"
+
+# font
+set font "UbuntuMono Nerd Font 10"
+
+# colors
+set default-fg "#f1eeca"
+set default-bg "#191919"
+
+set inputbar-fg "#f1eeca"
+set inputbar-bg "#0d0d11"
+
+set statusbar-fg "#e4bb6d"
+set statusbar-bg "#0d0d11"
+
+set completion-fg "#f2f0e9"
+set completion-bg "#0d0d11"
+
+set completion-group-fg "#538877"
+set completion-group-bg "#0d0d11"
+
+set completion-highlight-bg "#9e4e4e"
+set completion-highlight-fg "#0d0d11"
+
+set index-fg "#f1eeca"
+set index-bg "#0d0d11"
+
+set index-active-fg "#0d0d11"
+set index-active-bg "#9e4e4e"
