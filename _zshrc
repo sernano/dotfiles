@@ -1,0 +1,98 @@
+# source antigen and apply plugins. zsh-syntax-highlighting must be the last plugin sourced.
+source ~/.zsh/antigen/antigen.zsh
+antigen bundle ael-code/zsh-colored-man-pages
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
+
+# some color tweaks for zsh-syntax-highlighting
+# more info at https://github.com/zsh-users/zsh-syntax-highlighting/tree/master/docs/highlighters
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan'
+
+# autoload built in prompt themes
+autoload -Uz promptinit
+promptinit
+
+# powerlevel9k prompt and settings
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir newline vcs dir_writable)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='black'
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='cyan'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='black'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='blue'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='black'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='blue'
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND='228'
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND='green'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='black'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='green'
+POWERLEVEL9k_DIR_ETC_FOREGROUND='black'
+POWERLEVEL9k_DIR_ETC_BACKGROUND='green'
+
+# enables autocompletion with a arrow-key driven interface
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+
+# for autocompletion of command line switches for aliases
+setopt COMPLETE_ALIASES
+
+# enable editor/vim mode
+bindkey -v
+
+# environment variables
+export BROWSER="firefox"
+export EDITOR="vim"
+export GPG_TTY=$(tty)
+export TERMINAL="termite"
+export PATH=~/bin:"$PATH"
+
+# import cholorscheme from 'wal' asynchronously
+# & run the process in the background
+# ( ) # Hide shell job control messages.
+(cat $HOME/.cache/wal/sequences &)
+
+# import wal colorscheme to ttys
+source $HOME/.cache/wal/colors-tty.sh
+
+# simplify prompt for ttys
+source $HOME/bin/simpleprompt.sh
+
+# enable dynamic titles for termite. this doesn't work the way it's supposed to. idk why.
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_prompt_command
+fi
+
+# initialize nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# aliases
+alias bye='pkill -u samantha'
+alias mv='mv -iv'
+alias rm='rm -Iv'
+alias cp='cp -iv'
+alias ls='ls --color=auto'
+alias l='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias spindown='udisksctl power-off -b /dev/sdc'
+alias unmountphone='fusermount -u ~/mnt/Samsung\ Galaxy'
+alias apbssid='nmcli -f in-use,ssid,bssid,signal,bars dev wifi'
+alias weather='curl wttr.in/hoboken+new+jersey'
+alias mkfat='mkfs -t vfat'
+alias mkext='mkfs -t ext4'
+alias sudo='sudo '
+alias left-monitor='xrandr --output VGA-1 --auto --left-of LVDS-1'

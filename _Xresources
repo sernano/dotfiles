@@ -1,0 +1,75 @@
+! urxvt font
+URxvt.font: xft:UbuntuMono Nerd Font:size=10,xft:Inconsolata-dz for Powerline:size 8
+URxvt.boldFont:
+
+! urxvt window margins
+URxvt.internalBorder: 15
+
+! urxvt hide scrollbar
+URxvt.scrollBar: false
+
+! urxvt window transparency
+!URxvt.depth: 32
+!URxvt.background: [95]#282828
+!URxvt.transparent: true
+!URxvt.shading: 10
+
+! urxvt color scheme
+URxvt.termName: xterm-256color
+
+! special
+*.foreground:   #f1eeca
+*.background:   #0d0d11
+*.cursorColor:  #f1eeca
+
+! black
+*.color0:       #0d0d11
+*.color8:       #0d0d11
+
+! red
+*.color1:       #54414c
+*.color9:       #54414c
+
+! green
+*.color2:       #9e4e4e
+*.color10:      #9e4e4e
+
+! yellow
+*.color3:       #b6574e
+*.color11:      #b6574e
+
+! blue
+*.color4:       #538877
+*.color12:      #538877
+
+! magenta
+*.color5:       #ef9f6a
+*.color13:      #ef9f6a
+
+! cyan
+*.color6:       #e4bb6d
+*.color14:      #e4bb6d
+
+! white
+*.color7:       #f1eeca
+*.color15:      #f1eeca
+
+! rofi configuration
+rofi.bw: 1
+rofi.columns: 4
+rofi.padding: 15
+rofi.hide-scrollbar: true
+rofi.yoffset: 0
+rofi.location: 0
+rofi.width: 50
+rofi.font: UbuntuMono Nerd Font 10
+rofi.lines: 17
+rofi.fixed-num-lines: true
+
+!                  bg         	    border     separator
+rofi.color-window: argb:dc0d0d11,   #0d0d11,   #f1eeca
+
+!                  bg         	    fg         altbg      	hlbg             hlfg
+rofi.color-normal: argb:030d0d11,   #f1eeca,   argb:030d0d11,   argb:bf9e4e4e,   #0d0d11
+rofi.color-active: argb:030d0d11,   #f1eeca
+rofi.color-urgent: argb:030d0d11,   #f1eeca,   argb:030d0d11,   argb:bf9e4e4e,   #0d0d11
