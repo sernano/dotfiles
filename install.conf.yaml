@@ -1,4 +1,7 @@
 - link:
+    ~/.cache/wal/colors-tty.sh:
+      create: true
+      path: _colors-tty.sh
     ~/.config/betterlockscreenrc:
       create: true
       path: _betterlockscreenrc
@@ -39,3 +42,5 @@
       create: true
       path: _zathura
     ~/.antigen: _antigen
+    ~/.bash_profile: _bash_profile
+    ~/.bashrc: _bashrc

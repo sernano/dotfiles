@@ -1,0 +1,56 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# prompt string
+PS1='\[\033[1;32m\]\u\[\033[1;31m\]@\[\033[0m\]\[\033[1;32m\]\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[00m\]\[\033[1;33m\]$\[\033[0m\] '
+
+# environment variables
+export BROWSER="palemoon"
+export EDITOR="vim"
+export GPG_TTY=$(tty)
+export TERMINAL="urxvt"
+export PATH=~/bin:"$PATH"
+
+# import cholorscheme from 'wal' asynchronously
+# & run the process in the background
+# ( ) # Hide shell job control messages.
+(cat $HOME/.cache/wal/sequences &)
+
+# import wal colorscheme to ttys
+source $HOME/.cache/wal/colors-tty.sh
+
+# enable editor/vim mode
+set -o vi
+
+# aliases
+alias bye='pkill -u samantha'
+alias monero='nohup /home/samantha/monero/monero-gui/start-gui.sh &'
+alias mutt='cd ~/Downloads && neomutt'
+alias mv='mv -iv'
+alias rm='rm -Iv'
+alias cp='cp -iv'
+alias ls='ls --color=auto'
+alias l='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias spindown='udisksctl power-off -b /dev/sdc'
+alias apbssid='nmcli -f in-use,ssid,bssid,signal,bars dev wifi'
+alias weather='curl wttr.in/hoboken+new+jersey'
+alias mkfat='mkfs -t vfat'
+alias mkext='mkfs -t ext4'
+alias sudo='sudo '
+
+# initialize nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
