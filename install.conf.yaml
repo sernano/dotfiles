@@ -20,3 +20,12 @@
     ~/.config/oomox:
       create: true
       path: _oomox
+    ~/.config/picom:
+      create: true
+      path: _picom
+    ~/.config/polybar:
+      create: true
+      path: _polybar
+    ~/.config/redshift.conf:
+      create: true
+      path: _redshift.conf
