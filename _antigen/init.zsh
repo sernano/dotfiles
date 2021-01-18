@@ -1,5 +1,5 @@
 #-- START ZCACHE GENERATED FILE
-#-- GENERATED: Thu Nov 12 09:05:58 AM EST 2020
+#-- GENERATED: Fri Jan 15 01:28:53 PM EST 2021
 #-- ANTIGEN v2.2.2
 _antigen () {
 	local -a _1st_arguments
@@ -36,7 +36,7 @@ antigen () {
   return 0;
 }
 typeset -gaU fpath path
-fpath+=(/home/samantha/.antigen/bundles/ael-code/zsh-colored-man-pages /home/samantha/.antigen/bundles/zsh-users/zsh-syntax-highlighting) path+=(/home/samantha/.antigen/bundles/ael-code/zsh-colored-man-pages /home/samantha/.antigen/bundles/zsh-users/zsh-syntax-highlighting)
+fpath+=(/home/samantha/repos/my-repos/dotfiles/_antigen/bundles/ael-code/zsh-colored-man-pages /home/samantha/repos/my-repos/dotfiles/_antigen/bundles/zsh-users/zsh-syntax-highlighting) path+=(/home/samantha/repos/my-repos/dotfiles/_antigen/bundles/ael-code/zsh-colored-man-pages /home/samantha/repos/my-repos/dotfiles/_antigen/bundles/zsh-users/zsh-syntax-highlighting)
 _antigen_compinit () {
   autoload -Uz compinit; compinit -d "/home/samantha/.antigen/.zcompdump"; compdef _antigen antigen
   add-zsh-hook -D precmd _antigen_compinit
@@ -48,8 +48,8 @@ if [[ -n "" ]]; then
   ZSH=""; ZSH_CACHE_DIR=""
 fi
 #--- BUNDLES BEGIN
-source '/home/samantha/.antigen/bundles/ael-code/zsh-colored-man-pages/colored-man-pages.plugin.zsh';
-source '/home/samantha/.antigen/bundles/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh';
+source '/home/samantha/repos/my-repos/dotfiles/_antigen/bundles/ael-code/zsh-colored-man-pages/colored-man-pages.plugin.zsh';
+source '/home/samantha/repos/my-repos/dotfiles/_antigen/bundles/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh';
 
 #--- BUNDLES END
 typeset -gaU _ANTIGEN_BUNDLE_RECORD; _ANTIGEN_BUNDLE_RECORD=('https://github.com/ael-code/zsh-colored-man-pages.git / plugin true' 'https://github.com/zsh-users/zsh-syntax-highlighting.git / plugin true')
