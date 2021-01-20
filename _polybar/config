@@ -196,7 +196,7 @@ full-at = 100
 
 format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
-format-charging-foreground = ${colors.foreground}
+format-charging-foreground = #a2be42
 format-charging-background = #54414c
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -205,7 +205,7 @@ format-discharging-foreground = ${colors.foreground}
 format-discharging-background = #54414c
 
 format-full-prefix = " "
-format-full-prefix-foreground = #a3c725
+format-full-prefix-foreground = #a2be42
 format-full-foreground = ${colors.foreground}
 format-full-background = #54414c
 
