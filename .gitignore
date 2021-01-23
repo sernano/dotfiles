@@ -30,3 +30,7 @@ package-lock.json
 /_mutt/headers
 /_mutt/signatures
 /_mutt/tmp
+
+# Other stuff
+_fonts/.uuid
+_fonts/typecatcher/.uuid
