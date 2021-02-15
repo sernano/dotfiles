@@ -74,6 +74,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # aliases
+alias am='alsamixer'
 alias bye='pkill -u samantha'
 alias mv='mv -iv'
 alias rm='rm -Iv'
@@ -97,3 +98,4 @@ alias mkext='mkfs -t ext4'
 alias srv='python -m http.server'
 alias sudo='sudo '
 alias left-monitor='xrandr --output VGA-1 --auto --left-of LVDS-1'
+alias v='vim'
