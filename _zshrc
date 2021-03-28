@@ -102,3 +102,6 @@ alias v='vim'
 alias gm='git merge'
 alias grb='git rebase'
 alias gpft='git push --follow-tags'
+alias zshrc="v ~/.zshrc"
+alias vimrc="v ~/.vimrc"
+alias i3rc="v ~/.config/i3/config"
