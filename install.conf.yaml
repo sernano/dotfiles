@@ -72,3 +72,4 @@
 
 - shell:
     - [fc-cache -rf ~/.local/share/fonts, Install/update fonts]
+    - [wal -i ~/Pictures/Wallpaper/catinjapan.jpg, Initialize pywal]
