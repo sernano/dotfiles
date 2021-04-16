@@ -55,6 +55,7 @@
       path: catinjapan.jpg
     ~/.bash_profile: _bash_profile
     ~/.bashrc: _bashrc
+    ~/bin: _bin
     ~/.mbsyncrc: _mbsyncrc
     ~/.msmtprc: _msmtprc
     ~/.mutt: _mutt

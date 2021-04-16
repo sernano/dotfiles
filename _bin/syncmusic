@@ -1,0 +1,19 @@
+#!/bin/bash
+
+rsync \
+	--verbose \
+	--omit-dir-times \
+	--no-perms \
+	--recursive \
+	--inplace \
+	--delete \
+	--ignore-errors \
+	--exclude '*.ini' \
+	--exclude '*.jpg' \
+	--exclude '*.jpeg' \
+	--exclude '*.m3u' \
+	--exclude '*.pdf' \
+	--exclude '*.png' \
+	--exclude '*.url' \
+	/mnt/sdb/Music  \
+	~/media/Samsung\ Galaxy\ S7/Card/

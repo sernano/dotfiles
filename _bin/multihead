@@ -1,0 +1,5 @@
+#!/bin/bash
+
+xrandr --output VGA-1 --auto --left-of LVDS-1
+wal -R
+
