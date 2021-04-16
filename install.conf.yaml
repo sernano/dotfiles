@@ -11,9 +11,6 @@
     ~/.config/i3:
       create: true
       path: _i3
-    ~/.config/mimeapps.list:
-      create: true
-      path: _mimeapps.list
     ~/.config/mpd/mpd.conf:
       create: true
       path: _mpd.conf
