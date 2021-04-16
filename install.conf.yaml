@@ -66,6 +66,7 @@
     ~/.xprofile: _xprofile
     ~/.Xresources: _Xresources
     ~/.zprofile: _zprofile
+    ~/.zsh: _zsh
     ~/.zshrc: _zshrc
 
 - clean: ['~', '~./cache/wal', '~/.config', '~/.gnupg', '~/.local/share']
