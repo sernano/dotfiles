@@ -50,6 +50,9 @@
     ~/.local/share/fonts:
       create: true
       path: _fonts
+    ~/Pictures/Wallpaper/catinjapan.jpg:
+      create: true
+      path: catinjapan.jpg
     ~/.antigen: _antigen
     ~/.bash_profile: _bash_profile
     ~/.bashrc: _bashrc
