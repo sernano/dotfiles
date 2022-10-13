@@ -11,8 +11,8 @@ export PATH="$HOME/bin:$PATH"
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
-# start pywal
-wal -R
+# start multihead + pywal
+bin/multihead
 
 # start redshift
 redshift &
