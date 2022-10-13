@@ -8,7 +8,7 @@ font pango:UbuntuMono Nerd Font 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -114,11 +114,11 @@ workspace "2" output primary
 workspace "3" output primary
 workspace "4" output primary
 workspace "5" output primary
-workspace "6" output LVDS-1
-workspace "7" output LVDS-1
-workspace "8" output LVDS-1
-workspace "9" output LVDS-1
-workspace "10" output LVDS-1
+workspace "6" output primary
+workspace "7" output primary
+workspace "8" output eDP-1
+workspace "9" output eDP-1
+workspace "10" output eDP-1
 
 
 # assigned workspaces and misc. window defaults
