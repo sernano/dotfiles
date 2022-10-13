@@ -17,8 +17,8 @@ foreground = #f1eeca
 alert = #fd8c5f
 
 [bar/bar]
-monitor = VGA-1
-monitor-fallback = LVDS-1
+monitor = HDMI-1-0
+monitor-fallback = eDP-1
 monitor-strict = false
 override-redirect = false
 bottom = false
@@ -261,11 +261,12 @@ format-background = #e4bb6d
 
 [module/networkspeedup]
 type = internal/network
-interface = wlp3s0
+;interface = wlp3s0
 ;interface = enp14s0
 ;interface = enp0s31f6
 ;interface = enp3s0
 ;interface = wlp0s26u1u2
+interface = wlp0s20f3
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = " "
@@ -275,11 +276,12 @@ format-connected-background = #9e4e4e
 
 [module/networkspeeddown]
 type = internal/network
-interface = wlp3s0
+;interface = wlp3s0
 ;interface = enp14s0
 ;interface = enp0s31f6
 ;interface = enp3s0
 ;interface = wlp0s26u1u2
+interface = wlp0s20f3
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = "  "
@@ -311,9 +313,10 @@ ramp-background = ${colors.background}
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+;interface = wlp3s0
 ;interface = wlp0s26u1u2
 ;interval = 3.0
+interface = wlp0s20f3
 
 format-connected = <ramp-signal><label-connected>
 label-connected = " %essid%"
