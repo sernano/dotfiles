@@ -1,7 +1,7 @@
 # source antigen and apply plugins. zsh-syntax-highlighting must be the last plugin sourced.
 source ~/.zsh/antigen/antigen.zsh
 antigen bundle ael-code/zsh-colored-man-pages
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 antigen apply
 
 # some color tweaks for zsh-syntax-highlighting
@@ -14,6 +14,9 @@ ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan'
 # autoload built in prompt themes
 autoload -Uz promptinit
 promptinit
+
+# autoload other stuff
+autoload zcalc
 
 # powerlevel9k prompt and settings
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -46,10 +49,15 @@ bindkey -v
 
 # environment variables
 export BROWSER="firefox"
-export EDITOR="vim"
+export EDITOR="nvim"
 export GPG_TTY=$(tty)
 export TERMINAL="termite"
-export PATH=~/bin:"$PATH"
+export PATH=~/code/istio/bin:~/.local/bin:~/bin:"$PATH"
+export LEDGER_FILE=~/finance/2021.journal
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000000
+export SAVEHIST=${HISTSIZE}
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # import cholorscheme from 'wal' asynchronously
 # & run the process in the background
@@ -69,13 +77,16 @@ if [[ $TERM == xterm-termite ]]; then
 fi
 
 # initialize nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/share/nvm/init-nvm.sh
+
+# load pkgfile command not found script
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # aliases
 alias am='alsamixer'
-alias bye='pkill -u samantha'
 alias mv='mv -iv'
 alias rm='rm -Iv'
 alias cp='cp -iv'
@@ -98,10 +109,36 @@ alias mkext='mkfs -t ext4'
 alias srv='python -m http.server'
 alias sudo='sudo '
 alias left-monitor='xrandr --output VGA-1 --auto --left-of LVDS-1'
-alias v='vim'
+alias v='nvim'
 alias gm='git merge'
 alias grb='git rebase'
 alias gpft='git push --follow-tags'
 alias zshrc="v ~/.zshrc"
 alias vimrc="v ~/.vimrc"
 alias i3rc="v ~/.config/i3/config"
+alias uncommit='reset HEAD~'
+alias grep-ri='grep -Ri --exclude-dir=node_modules'
+
+# Kubectl shortcuts
+alias kl='kubectl logs'
+alias kp='kubectl get pods'
+alias ks='kubectl get services'
+alias wkd='watch kubectl get deployments'
+alias wkp='watch kubectl get pods'
+alias wks='watch kubectl get services'
+
+# Docker stuff
+# Clear Docker cache
+alias dprune='docker system prune --all'
+
+
+# Keybindings
+# Bind Ctrl-R to History Search
+bindkey '^R' history-incremental-pattern-search-backward
+# Bind Ctrl-W to Delete Word Backwards
+bindkey '^W' backward-kill-word
+# Bind Ctrl-K/Ctrl-J to go Up/Down in History
+bindkey '^K' history-substring-search-up
+bindkey '^J' history-substring-search-down
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
